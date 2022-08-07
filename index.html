@@ -16,13 +16,14 @@
     <h1>Azure Static Web Apps custom roles demo</h1>
     <div>
         <!--<a href="/.auth/login/aad">Login</a> | <a href="/.auth/logout">Logout</a>-->
-        <a href="/.auth/login/github">Login</a> | <a href="/.auth/logout">Logout</a>
+        <a href="/.auth/login/aad">AAD Login</a>  | <a href="/.auth/login/github">Github Login</a> | <a href="/.auth/logout">Logout</a>
     </div>
     <hr>
     <div>
         <ul>
             <li><a href="/anonymous/">All users can access this page</a></li>
-            <li><a href="/authenticated/">All authenticated users can access this page</a></li>
+            <li><a href="/authenticated/index.html">All authenticated Azure AD users can access this page</a></li>
+
             <!-- <li><a href="/admin/">Only users in the admin custom role can access this page</a></li> -->
         </ul>
     </div>
