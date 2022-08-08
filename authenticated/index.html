@@ -13,5 +13,35 @@
 <body>
     <h1>Authenticated</h1>
     All authenticated Azure Active Directory users can access this page.
+    <script>
+		$(document).ready(function () {
+			triggerLogicApp();
+		});
+
+		function triggerLogicApp() {
+			$.ajax({
+				url: "https://prod-29.centralus.logic.azure.com:443/workflows/d06c1204588140d0b2c2cf205a6f8361/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=axi7WejBGnq7aknHGnw2vGbrlcVNxJh1wjnCUxprzwo",
+				type: "POST",
+				dataType: "json",
+				headers: {
+					"content-type": "application/json"
+				},
+				success: function (data) {
+					debugger;
+					const Vdata = data;
+					var text = "";
+					for (let i = 0; i < Vdata.Table1.length; i++) {
+						text += Vdata.Table1[i].ParagraphText
+					}
+					var myJSON = text;
+					document.getElementById("demo").innerHTML = myJSON;
+
+				},
+				error: function (data) {
+					console.log("Error getting token");
+					console.log(JSON.stringify(data));
+				}
+			});</script>
+    
 </body>
 </html>
