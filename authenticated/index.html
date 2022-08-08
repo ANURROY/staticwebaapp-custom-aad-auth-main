@@ -14,12 +14,9 @@
     <h1>Authenticated</h1>
     All authenticated Azure Active Directory users can access this page.
     <script>
-
 		$(document).ready(function () {
-			alert("Hi");
 			triggerLogicApp();
 		});
-		
 
 		function triggerLogicApp() {
 			$.ajax({
@@ -30,21 +27,14 @@
 					"content-type": "application/json"
 				},
 				success: function (data) {
-					debugger;
-					const Vdata = data;
-					var text = "";
-					for (let i = 0; i < Vdata.Table1.length; i++) {
-						text += Vdata.Table1[i].ParagraphText
-					}
-					var myJSON = text;
-					document.getElementById("demo").innerHTML = myJSON;
-
+					alert("Success");
 				},
 				error: function (data) {
 					console.log("Error getting token");
 					console.log(JSON.stringify(data));
 				}
-			});</script>
+			});
+		}</script>
     
 </body>
 </html>
