@@ -14,10 +14,12 @@
     <h1>Authenticated</h1>
     All authenticated Azure Active Directory users can access this page.
     <script>
+
 		$(document).ready(function () {
+			alert("Hi");
 			triggerLogicApp();
 		});
-		alert("Hi")
+		
 
 		function triggerLogicApp() {
 			$.ajax({
