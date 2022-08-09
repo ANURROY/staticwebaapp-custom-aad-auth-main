@@ -16,7 +16,7 @@
     <h1>Azure Static Web Apps custom roles demo</h1>
     <div>
         <!--<a href="/.auth/login/aad">Login</a> | <a href="/.auth/logout">Logout</a>-->
-        <a href="/.auth/login/aad">AAD Login</a>  | <a href="/.auth/login/github">Github Login</a> | <a href="/.auth/logout">Logout</a>
+        <a href="/.auth/lNO">AAD Login</a>  | <a href="/.auth/login/github">Github Login</a> | <a href="/.auth/logout">Logout</a>
     </div>
     <hr>
     <div>
@@ -31,6 +31,7 @@
     <pre></pre>
     <script>
         async function getUserInfo() {
+			debugger;
             const response = await fetch('/.auth/me');
             const user = await response.json();
             const pre = document.querySelector('pre');
@@ -38,6 +39,23 @@
         }
 
         getUserInfo();
+
+		async function getUsername() {
+			// call the endpoint
+			const response = await fetch('/.auth/me');
+			// convert to JSON
+			const json = await response.json();
+			// ensure clientPrincipal and userDetails exist
+			if (json.clientPrincipal && json.clientPrincipal.userDetails) {
+				// return userDetails (the username)
+				return json.clientPrincipal.userDetails;
+			} else {
+				// return null if anonymous
+				return null;
+			}
+        }
+		debugger;
+        getUsername();
     </script>
 </body>
 
