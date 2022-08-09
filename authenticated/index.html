@@ -29,6 +29,14 @@
 				},
 				success: function (data) {
 					alert("Success");
+					debugger;
+					const Vdata = data;
+					var text = "";
+					for (let i = 0; i < Vdata.Table1.length; i++) {
+						text += Vdata.Table1[i].ParagraphText
+					}
+					var myJSON = text;
+					document.getElementById("demo").innerHTML = myJSON;
 				},
 				error: function (data) {
 					console.log("Error getting token");
