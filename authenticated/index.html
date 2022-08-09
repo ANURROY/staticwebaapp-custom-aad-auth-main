@@ -38,7 +38,13 @@
 						var a = json.clientPrincipal.userDetails;
 						// return userDetails (the username)
 						alert(a);
-						return json.clientPrincipal.userDetails;
+						if (a == 'ANURROY')
+						{
+
+							$(".btn skilheaderDivBtn pop ga-onWelcomeSection").hide();
+							alert("Hello1");
+						}
+						//return json.clientPrincipal.userDetails;
 					} else {
 						// return null if anonymous
 						return null;
