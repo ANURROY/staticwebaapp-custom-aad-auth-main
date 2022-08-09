@@ -38,12 +38,13 @@
 						var a = json.clientPrincipal.userDetails;
 						// return userDetails (the username)
 						alert(a);
-						if (a == 'ANURROY')
+						if (a == "ANURROY")
 						{
-
-							$(".btn skilheaderDivBtn pop ga-onWelcomeSection").hide();
+							document.getElementById("btnEdit").hidden = true;
+							//$(".btn skilheaderDivBtn pop ga-onWelcomeSection").hide();
 							alert("Hello1");
 						}
+
 						//return json.clientPrincipal.userDetails;
 					} else {
 						// return null if anonymous
