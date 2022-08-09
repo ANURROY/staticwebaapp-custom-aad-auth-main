@@ -30,15 +30,15 @@
     <hr>
     <pre></pre>
     <script>
-        async function getUserInfo() {
-			debugger;
-            const response = await fetch('/.auth/me');
-            const user = await response.json();
-            const pre = document.querySelector('pre');
-            pre.textContent = JSON.stringify(user, null, 2);
-        }
+   //     async function getUserInfo() {
+			//debugger;
+   //         const response = await fetch('/.auth/me');
+   //         const user = await response.json();
+   //         const pre = document.querySelector('pre');
+   //         pre.textContent = JSON.stringify(user, null, 2);
+   //     }
 
-        getUserInfo();
+   //     getUserInfo();
 
 		async function getUsername() {
 			// call the endpoint
