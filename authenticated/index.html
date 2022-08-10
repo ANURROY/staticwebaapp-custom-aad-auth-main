@@ -14,7 +14,7 @@
 	<h1>Authenticated</h1>
 	All authenticated users can access this page.
 	<div class="container">
-		<button type="button" class="btn skilheaderDivBtn pop ga-onWelcomeSection" title="" id="btnEdit">Edit</button>
+		<button type="button" class="btn skilheaderDivBtn pop ga-onWelcomeSection" title="" id="btnEdit">Edit The Content</button>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 greenText" id="demo" contenteditable="true">
 
@@ -23,12 +23,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script>
 			$('#btnEdit').click(function () {
-				//Response.redirect("https://aecom.sharepoint.com/sites/Development/PMCert/PMCertPhase2/Lists/MasterEmployeeData/AllItems.aspx");
-				//location.href = "https://aecom.sharepoint.com/sites/Development/PMCert/PMCertPhase2/Lists/MasterEmployeeData/AllItems.aspx";
+				//Response.redirect("");
+				//location.href = "";
 
-				window.open('https://aecom.sharepoint.com/sites/Development/PMCert/PMCertPhase2/Lists/MasterEmployeeData/AllItems.aspx', '_blank');
+				window.open('https://aecom.sharepoint.com/sites/Development/samtest/Lists/PageText/AllItems.aspx', '_blank');
 				//$('#demo').focus();
-				alert("good to know..");
+				//alert("good to know..");
 			});
 				async function getUsername() {
 					// call the endpoint
@@ -42,7 +42,7 @@
 						var loginusrname = json.clientPrincipal.userDetails;
 						// return userDetails (the username)
 						//alert(loginusrname);
-						if (loginusrname == "ANURROY")
+						if (loginusrname == "ANURROY" || loginusrname == "Anurag Roy" )
 						{
 						document.getElementById("btnEdit").hidden = true;
 							//alert("Hello1");
