@@ -41,7 +41,7 @@
               "clientSecretSettingName": "OKTA_SECRET"
             },
             "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://dev-30530590.okta.com/.well-known/openid-configuration"
+              "wellKnownOpenIdConfiguration": "https://aecomext.okta.com/.well-known/openid-configuration"
             }
           },
           "login": {
