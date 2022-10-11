@@ -2,10 +2,16 @@
   "routes": [
     {
       "route": "/authenticated/*",
-      "allowedRoles": [ "authenticated" ],
-      "redirect": "/authenticated/*"
+      "allowedRoles": [ "authenticated" ]
+
     }
   ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/.auth/login/okta?post_login_redirect_uri=.referrer",
+      "statusCode": 302
+    }
+  },
   //"auth": {
   //  "identityProviders": {
   //    "azureActiveDirectory": {
@@ -54,7 +60,7 @@
 
 
     }
-   
+
   },
   "globalHeaders": {
     "Cache-Control": "no-cache"
