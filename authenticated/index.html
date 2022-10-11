@@ -11,8 +11,13 @@
     </style>
 </head>
 <body>
-	<h1>Authenticated</h1>
-	All authenticated users can access this page.
+	<h1>Authenticated : All authenticated users can access this page.</h1>
+	
+	<div>
+		<!--<a href="/.auth/login/aad">Login</a> | <a href="/.auth/logout">Logout</a>-->
+		<!-- <a href="/.auth/login/aad">Azure Active Directory Login</a>  | <a href="/.auth/login/github">GitHub Login</a> | <a href="/.auth/login/okta">Okta Login</a> | <a href="/.auth/logout">Logout</a>-->
+    <a href="/.auth/logout">Logout</a>
+	</div>
 	<div class="container">
 		<button type="button" class="btn skilheaderDivBtn pop ga-onWelcomeSection" title="" id="btnEdit">Edit The Content of the Page</button>
 		<div class="row">
@@ -30,34 +35,33 @@
 			//	//$('#demo').focus();
 			//	//alert("good to know..");
 			//});
-				async function getUsername() {
-					// call the endpoint
-					//alert("Hello");
-					const response = await fetch('/.auth/me');
-					// convert to JSON
-					const json = await response.json();
-					// ensure clientPrincipal and userDetails exist
-					if (json.clientPrincipal && json.clientPrincipal.userDetails) {
-						
-						var loginusrname = json.clientPrincipal.userDetails;
-						// return userDetails (the username)
-						//alert(loginusrname);
-						if (loginusrname == "ANURROY" || loginusrname == "New Employee" )
-						{
-						document.getElementById("btnEdit").hidden = true;
-							//alert("Hello1");
-						}
+			async function getUsername() {
+				// call the endpoint
+				//alert("Hello");
+				const response = await fetch('/.auth/me');
+				// convert to JSON
+				const json = await response.json();
+				// ensure clientPrincipal and userDetails exist
+				if (json.clientPrincipal && json.clientPrincipal.userDetails) {
 
-						//return json.clientPrincipal.userDetails;
-					} else {
-						// return null if anonymous
-						//return null;
-						console.log("ClientPrincipal and userDetails does not exist");
+					var loginusrname = json.clientPrincipal.userDetails;
+					// return userDetails (the username)
+					//alert(loginusrname);
+					if (loginusrname == "ANURROY" || loginusrname == "New Employee") {
+						document.getElementById("btnEdit").hidden = true;
+						//alert("Hello1");
 					}
-		        }
-				debugger;
-		//  getUsername();
-		
+
+					//return json.clientPrincipal.userDetails;
+				} else {
+					// return null if anonymous
+					//return null;
+					console.log("ClientPrincipal and userDetails does not exist");
+				}
+			}
+			debugger;
+			//  getUsername();
+
 			$(document).ready(function () {
 				getUsername();
 				triggerLogicApp();
