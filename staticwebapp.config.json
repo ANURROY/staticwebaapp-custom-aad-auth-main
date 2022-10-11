@@ -6,12 +6,12 @@
 
     }
   ],
-  "responseOverrides": {
-    "401": {
-      "redirect": "/.auth/login/okta?post_login_redirect_uri=https://nice-ground-064540210.1.azurestaticapps.net/authenticated/index.html",
-      "statusCode": 302
-    }
-  },
+  //"responseOverrides": {
+  //  "401": {
+  //    "redirect": "/.auth/login/okta?post_login_redirect_uri=https://nice-ground-064540210.1.azurestaticapps.net/authenticated/index.html",
+  //    "statusCode": 302
+  //  }
+  //},
   //"auth": {
   //  "identityProviders": {
   //    "azureActiveDirectory": {
