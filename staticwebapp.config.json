@@ -2,7 +2,8 @@
   "routes": [
     {
       "route": "/authenticated/*",
-      "allowedRoles": [ "authenticated" ]
+      "allowedRoles": [ "authenticated" ],
+      "redirect": "/authenticated/*"
     }
   ],
   //"auth": {
