@@ -5,10 +5,11 @@
       //"allowedRoles": [ "authenticated" ],
       "route": "/login",
       "rewrite": "/.auth/login/okta",
-      "allowedRoles": [ "anonymous", "authenticated" ]
+      "allowedRoles": [ "authenticated" ]
 
     }
   ],
+
   //"responseOverrides": {
   //  "401": {
   //    "redirect": "/.auth/login/okta?post_login_redirect_uri=https://nice-ground-064540210.1.azurestaticapps.net/authenticated/index.html",
