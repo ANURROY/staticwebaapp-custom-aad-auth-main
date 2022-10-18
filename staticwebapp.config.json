@@ -1,9 +1,12 @@
 {
+  "navigationFallback": {
+    "rewrite": "index.html"
+  },
   "routes": [
     {
       //"route": "/authenticated/*",
       //"allowedRoles": [ "authenticated" ],
-      "route": "/authenticated/*",
+      "route": "/login",
       "rewrite": "/.auth/login/okta",
       "allowedRoles": [ "authenticated" ]
 
