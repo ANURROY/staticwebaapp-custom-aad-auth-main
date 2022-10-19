@@ -4,7 +4,7 @@
      
       "route": "/NewFolder/*",
       "rewrite": "/.auth/login/okta",
-      "allowedRoles": [ "authenticated" ]
+      "allowedRoles": [ "authenticated"]
       //"route": "/login",
       //"rewrite": "/.auth/login/okta",
       //"allowedRoles": [ "authenticated" ]
