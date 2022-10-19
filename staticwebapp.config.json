@@ -2,8 +2,8 @@
   "routes": [
     {
      
-      "route": "/authenticated/*",
-      //"rewrite": "/.auth/login/okta",
+      "route": "/NewFolder/*",
+      "rewrite": "/.auth/login/okta",
       "allowedRoles": [ "authenticated" ]
       //"route": "/login",
       //"rewrite": "/.auth/login/okta",
