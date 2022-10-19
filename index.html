@@ -1,0 +1,148 @@
+<!--<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!-- <title>Azure Static Web Apps custom roles</title>-->
+    <!--<style>
+        body {
+            background-color: green;
+        }
+    </style>-->
+    <!--<meta http-equiv="refresh" content="0;url=/.auth/login/okta" />-->
+<!--</head>
+
+<body>
+    <h1 style="text-align:center;color:white;font:1000px">AECOM WEL7jmCOME SITE </h1>
+    <div style="width:800px; margin:0 auto;">-->
+        <!--<a href="/.auth/login/aad">Login</a> | <a href="/.auth/logout">Logout</a>-->
+        <!-- <a href="/.auth/login/aad">Azure Active Directory Login</a>  | <a href="/.auth/login/github">GitHub Login</a> | <a href="/.auth/login/okta">Okta Login</a> | <a href="/.auth/logout">Logout</a>-->
+        <!--<a href="/.auth/login/okta?post_login_redirect_uri=https://nice-ground-064540210.1.azurestaticapps.net/authenticated/index.html">Login</a> | <a href="/.auth/logout">Logout</a>-->
+    <!--</div>
+    <hr>
+    <div>-->
+        <!--<ul>
+            <li><a href="/anonymous/">All users can access this page</a></li>
+            <li><a href="/authenticated/index.html">All authenticated Azure AD users can access this page</a></li>-->
+
+            <!-- <li><a href="/admin/">Only users in the admin custom role can access this page</a></li> -->
+        <!--</ul>-->
+    <!--</div>
+    <hr>
+    <pre></pre>-->
+    <!--<script>
+        async function getUserInfo() {
+			debugger;
+            const response = await fetch('/.auth/me');
+            const user = await response.json();
+            const pre = document.querySelector('pre');
+            pre.textContent = JSON.stringify(user, null, 2);
+        }
+
+        getUserInfo();
+
+    </script>-->
+<!--</body>
+
+</html>-->
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticated</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Authenticated : All authenticated users can access this page.</h1>
+
+    <div>
+        <!--<a href="/.auth/login/aad">Login</a> | <a href="/.auth/logout">Logout</a>-->
+        <!-- <a href="/.auth/login/aad">Azure Active Directory Login</a>  | <a href="/.auth/login/github">GitHub Login</a> | <a href="/.auth/login/okta">Okta Login</a> | <a href="/.auth/logout">Logout</a>-->
+        <a href="/.auth/logout">Logout</a>
+    </div>
+    <div class="container">
+        <button type="button" class="btn skilheaderDivBtn pop ga-onWelcomeSection" title="" id="btnEdit">Edit The Content of the Page</button>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 greenText" id="demo" contenteditable="true">
+
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script>//$('#btnEdit').click(function () {
+			//	//Response.redirect("");
+			//	//location.href = "";
+
+			//	window.open('https://aecom.sharepoint.com/sites/Development/samtest/Lists/PageText/AllItems.aspx', '_blank');
+			//	//$('#demo').focus();
+			//	//alert("good to know..");
+			//});
+			async function getUsername() {
+				// call the endpoint
+				//alert("Hello");
+				const response = await fetch('/.auth/me');
+				// convert to JSON
+				const json = await response.json();
+				// ensure clientPrincipal and userDetails exist
+				if (json.clientPrincipal && json.clientPrincipal.userDetails) {
+
+					var loginusrname = json.clientPrincipal.userDetails;
+					// return userDetails (the username)
+					//alert(loginusrname);
+					if (loginusrname == "ANURROY" || loginusrname == "New Employee") {
+						document.getElementById("btnEdit").hidden = true;
+						//alert("Hello1");
+					}
+
+					//return json.clientPrincipal.userDetails;
+				} else {
+					// return null if anonymous
+					//return null;
+					console.log("ClientPrincipal and userDetails does not exist");
+				}
+			}
+			debugger;
+			//  getUsername();
+
+			$(document).ready(function () {
+				getUsername();
+				triggerLogicApp();
+			});
+
+			function triggerLogicApp() {
+				$.ajax({
+					//url: "https://prod-29.centralus.logic.azure.com:443/workflows/d06c1204588140d0b2c2cf205a6f8361/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=axi7WejBGnq7aknHGnw2vGbrlcVNxJh1wjnCUxprzwo",
+					url: "https://nice-ground-064540210.1.azurestaticapps.net/api/task",
+					type: "GET",
+					dataType: "json",
+					headers: {
+						"content-type": "application/json"
+					},
+					success: function (data) {
+						//alert("Success");
+						debugger;
+						const Vdata = data;
+						var text = "";
+						for (let i = 0; i < Vdata.Table1.length; i++) {
+							text += Vdata.Table1[i].ParagraphText
+						}
+						var myJSON = text;
+						document.getElementById("demo").innerHTML = myJSON;
+					},
+					error: function (data) {
+						console.log("Error getting token");
+						console.log(JSON.stringify(data));
+					}
+				});
+			}</script>
+
+</body>
+</html>
