@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/authenticated/*",
+      "route": "/index.html",
       "allowedRoles": [ "authenticated" ]
       //"route": "/login",
       //"rewrite": "/.auth/login/okta",
