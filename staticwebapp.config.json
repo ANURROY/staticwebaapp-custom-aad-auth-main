@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/index.html",
+      "route": "/staticwebaapp-custom-aad-auth-main/index.html",
       "rewrite": "/.auth/login/okta",
       "allowedRoles": [ "authenticated" ]
       //"route": "/login",
