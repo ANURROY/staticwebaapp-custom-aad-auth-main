@@ -3,7 +3,7 @@
     {
      
       "route": "/authenticated/*",
-      "rewrite": "/.auth/login/okta",
+      //"rewrite": "/.auth/login/okta",
       "allowedRoles": [ "authenticated" ]
       //"route": "/login",
       //"rewrite": "/.auth/login/okta",
