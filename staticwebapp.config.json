@@ -3,7 +3,7 @@
     {
 
 
-      "route": "/login",
+      "route": "/index.html",
       "rewrite": "/.auth/login/okta",
       "allowedRoles": [ "anonymous", "authenticated" ]
     },
