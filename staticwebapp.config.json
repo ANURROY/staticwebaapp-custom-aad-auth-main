@@ -12,7 +12,7 @@
     //},
     {
 
-      "route": "/authenticated/index.html",
+      "route": "/authenticated/*",
       //"rewrite": "/.auth/login/okta",
       "allowedRoles": [ "authenticated" ]
       //"route": "/login",
