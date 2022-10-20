@@ -1,11 +1,12 @@
 {
   "routes": [
     {
-      //"route": "/authenticated/*",
-      //"allowedRoles": [ "authenticated" ],
-      "route": "/login",
-      "rewrite": "/.auth/login/okta",
+      "route": "/authenticated/*",
       "allowedRoles": [ "authenticated" ]
+      
+      //"route": "/login",
+      //"rewrite": "/.auth/login/okta",
+      //"allowedRoles": [ "authenticated" ]
 
     }
   ],
