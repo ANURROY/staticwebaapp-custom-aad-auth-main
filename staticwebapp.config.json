@@ -1,12 +1,9 @@
 {
   "routes": [
-  
     {
-      "route": "/authenticated/*", 
-      "allowedRoles": ["authenticated"]
-
+      "route": "/authenticated/*",
+      "allowedRoles": [ "authenticated" ]
     }
-
   ],
 
   //"responseOverrides": {
