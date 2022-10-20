@@ -4,7 +4,7 @@
       //"route": "/authenticated/*",
       //"allowedRoles": [ "authenticated" ],
       "route": "/login",
-      "rewrite": "/.auth/login/aad",
+      //"rewrite": "/.auth/login/aad",
       "redirect": "/.auth/login/aad",
       "allowedRoles": [ "authenticated" ]
 
