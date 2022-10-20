@@ -10,7 +10,7 @@
 
     },
     {
-      "route": "/authenticated/*",
+      "route": "/authenticated/index.html",
       "redirect": "/.auth/login/aad",
       "allowedRoles": [ "authenticated" ]
 
