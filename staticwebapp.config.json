@@ -6,7 +6,7 @@
     //  "route": "/index.html",
     //  //"rewrite": "/.auth/login/aad",
     //  "redirect": "/.auth/login/okta",
-    // "allowedRoles": [ "authenticated","" ]
+    // "allowedRoles": [ "authenticated" ]
 
     //},
     {
