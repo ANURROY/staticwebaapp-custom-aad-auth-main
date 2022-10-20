@@ -1,19 +1,9 @@
 {
   "routes": [
-    //{
-    //  //"route": "/authenticated/*",
-    //  //"allowedRoles": [ "authenticated" ],
-    //  "route": "/index.html",
-    //  //"rewrite": "/.auth/login/aad",
-    //  "redirect": "/.auth/login/okta",
-    // "allowedRoles": [ "authenticated" ]
-
-    //},
+  
     {
       "route": "/authenticated/*", 
-      "allowedRoles": [ "authenticated" ]
-
-
+      "allowedRoles": ["authenticated"]
 
     }
 
